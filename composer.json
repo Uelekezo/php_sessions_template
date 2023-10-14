@@ -1,0 +1,18 @@
+{
+    "name": "user/sessions",
+    "require": {
+        "owasp/csrf-protector-php": "^1.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "User\\Sessions\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Titus K. Cheserem",
+            "email": "cheseremtitus24@gmail.com"
+        }
+    ]
+}
