@@ -1,12 +1,25 @@
 <?php
+include_once __DIR__ .'/libs/csrf/csrfprotector.php';
+
+// Initialise CSRFProtector library
+csrfProtector::init();
 session_start();
 
 if (isset($_SESSION['user_data'])) {
     header('Location: page1.php');
     exit();
 }
-$orig_url = $_SESSION['referer'];
-echo "Orig_url: $orig_url <br>";
+
+    if (isset($_SESSION['referer']))
+    {
+        $orig_url = $_SESSION['referer'];
+        echo "Orig_url: $orig_url <br>";
+    }
+    
+    
+    
+
+
 
 ?>
 <!DOCTYPE html>
