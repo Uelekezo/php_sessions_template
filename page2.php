@@ -2,8 +2,11 @@
 include_once __DIR__ .'/libs/csrf/csrfprotector.php';
 
 // Initialise CSRFProtector library
-csrfProtector::init();
-session_start();
+try {
+    csrfProtector::init();
+} catch (configFileNotFoundException $e) {
+}
+if(!isset($_SESSION)) { session_start(); }
 
 if (!isset($_SESSION['user_data'])) {
     $_SESSION['referer'] = "page2.php";
